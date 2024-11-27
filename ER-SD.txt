@@ -1,0 +1,67 @@
+ABSTRACT :-
+Speech Emotions Recognition system is a collection of methodologies that process and classify speech signals to detect emotions embedded in them. Human machine interaction is widely used nowadays in many applications. One of the medium of interaction is speech. The main challenges in human machine interaction is detection of emotion from speech. DL has come as a new attractive algorithm of ML in the last decade . DL algorithms are usually the extension of neural networks with multiple layers of linear and non-linear operations. To enhance the capacity of computers mostly DL approaches are used so that computers can understand what humans can do, which includes emotional recognition from speech. In the critical analysis of SER, there are three main factors such as speech emotional databases, speech features, and classifiers.
+
+INTRODUCTION :-
+ In human emotion recognition from speech, a fundamental research question is, to identify the emotional state of the speaker from a given speech signal.
+There are three important factors for emotion recognition from speech they are “what is said”, (i.e. contents) “how it is said”, (i.e. way/style of speaking) , and “who is saying it” (i.e. whether male or female). 
+The best example of it can be seen at call centers. If you ever noticed, call centers employees never talk in the same manner, their way of pitching/talking to the customers changes with customers. The employees recognize customer's emotions from speech, so they can improve their service and convince more people.  
+
+MOTIVATION :-
+Human beings speech is amongst the most natural way to express ourselves. As emotions play  a vital role in communication , the detection and analysis of the same is if vital important in today's era. We often use emojis to express the emotions associated with the messages. Emotion detection is a challenging task, because emotions are subjective.We define a SER system as a collection of methodologies that process and classify speech signals to detect emotions embedded in them. 
+
+PROPOSED SYSTEM :-
+In this we have been used MFCC (Mel - frequency cepstral co-efficients) for the features for classifying the speech data into various emotion categories employing artificial neural networks. The usage of the neural networks provides us the advantage of classifying many different types of emotions in a variable length of audio signal in a real time environment. This technique manages to establish a good balance between computational volume and performance accuracy of the real time process.
+
+MODULE DESCRIPTION :-
+An emotion recognition system is based on digitized , speech is comprised of three fundamental components signal preprocessing, feature extraction and classification.
+Acoustic preprocessing such as denoising as well as segmentation is carried out to determine meaningful units of this signal . 
+Preprocessing the raw speech signal to extract relevant features, such as Mel-frequency cepstral coefficients (MFCCs), pitch, and energy, which can be used as inputs to the deep neural network.
+RAVDESS ( Ryerson Audio-Visual Database of Emotional Speech and Song) dataset has been used here , detailed information in given in the result and analysis section.
+Python pacakages have been used such as librosa , seaborn , matplotlib, ipython display etc .
+Pre-Processing :- output of the feature extracted were 2D in form, we decided to take a bi-directional approach using both a 1D form of input and a 2D form of input 
+In pre-processing we are using sklearn (Model selection) , pandas (Data manipulation & analysis) libraries.
+Feature extraction :- Feature extraction helps to reduce the amount of redundant data from the data set. Extraction of features is a very important part in analyzing and finding relations between different things. It is required for classification, prediction and recommendation algorithms.
+In feature extraction we are using librosa (Audio & sound analysis) , matplotlib (Data visualization & graphical plotting) libraries.
+MFCC (Mel -Frequency Cepstral Coefficients) :- this is used to recognise the emotion of a speaker from their voice.
+MelSpectogram :- visual representation of the spectrum of frequencies of the signal as it changes with time. 
+Classifier used :- CNN (convolutional neural network) developed the CNN model with Keras and constructed with 4 layers — 3 Conv1D layers followed by a Dense layer.
+Optimizer :- Adam (faster computation time, and require fewer parameters for tuning)
+
+
+CNN LAYOUT :-
+When using a CNN for audio processing, it is common to convert the audio waveform into a spectrogram representation, which is a 2D visual representation of the audio signal's frequency content over time.
+Input Layer: The input layer takes in the spectrogram representation of the audio as its input. 
+Convolutional Layers: Convolutional layers are responsible for extracting local features from the spectrogram. They consist of multiple filters that slide across the input spectrogram, performing convolutions. 
+Pooling Layers: Pooling layers are used to down sample the output of the convolutional layers, reducing the spatial dimensions and capturing the most salient features. Max pooling is commonly used, where the maximum value within each pooling region is selected.
+Fully Connected Layers: . These layers allow the network to learn complex relationships between the extracted features and the target emotions. You can have multiple fully connected layers with dropout regularization to prevent overfitting.
+Output Layer: The output layer typically consists of a softmax activation function, which provides probabilities for each emotion category in the dataset. The number of nodes in the output layer depends on the number of emotion classes you want to classify.
+
+
+CONCLUSION :- 
+In   this   project   we   have   tried   to   analyze   some   samples   of   speech   using   the   deep   learning technique. Firstly we loaded the datasets then we visualized the different human emotions using our   functions   waveshow   and   spectrogram  using   the   Librosa   library.  Then   we   extracted   the acoustic features of all our samples using the MFCC method.Then we build the model and after training the model we visualized the data into the graphical form using matplotlib library and after some repeated testing using different values the average accuracy of the model is found to be 62%.
+
+FUTURE SCOPE :-
+The speech emotion recognition is a very interesting topic and there is lot more to discover in the field, in our model the future work will include the improvement of accuracy of the model to get better results, we can also train the model to give results of the speech that is longer in duration like in this model we are able to recognize the emotion only for short duration of time in future we will able to load the longer sample dataset and the model the model will classify different emotions in different period of time. Its future work can also include the recording of on time data through a microphone so that there is no need of loading the dataset we will just train the model and then data can be recorded to give the emotions of that person’s voice.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
